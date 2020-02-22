@@ -2,7 +2,7 @@
 
 ![Profile](./img/profile_twitter.png)
 
-En este repositorio podes encontrar las lineas que dan vida al Bot [@DonarSangreBot](www.twitter.com/DonarSangreBot).
+En este repositorio podes encontrar las lineas que dan vida al Bot [@DonarSangreBot](https://twitter.com/DonarSangreBot).
 
 Si todavía no lo seguis, te invito a que lo hagas y en caso que quieras difundir alguna campaña sólo tenes que arrobarlo en un tweet, respuesta a un tweet o si citas el tweet de la campaña, mencionándolo en la cita.
 
