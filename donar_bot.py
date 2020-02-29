@@ -2,7 +2,7 @@ import config
 import time
 from bot_tools import post_processing
 
-#time.sleep(60 * 3)
+time.sleep(60 * 2)
 
 tw = config.create_api()
 
@@ -39,17 +39,17 @@ for mention in mentions:
 time.sleep(60)
 
 #rt buscando keywords
-# results = tw.search('dadores de sangre', result_type='mixed', count=40)
-#
-# for result in results:
-#     match_status, id_status = post_processing(result)
-#     if match_status:
-#         search_status = tw.get_status(id_status)._json
-#         if search_status['retweeted']:
-#             print(f'Already RT: {id_status}')
-#         else:
-#             tw.retweet(id_status)
-#             print(f'RT ID {id_status}')
-#     else:
-#         print(f"Tweet ID {id_status} didn't match regexp criteria")
-#     time.sleep(8)
+results = tw.search('dadores de sangre', result_type='mixed', count=40)
+
+for result in results:
+    match_status, id_status = post_processing(result)
+    if match_status:
+        search_status = tw.get_status(id_status)._json
+        if search_status['retweeted']:
+            print(f'Already RT: {id_status}')
+        else:
+            tw.retweet(id_status)
+            print(f'RT ID {id_status}')
+    else:
+        print(f"Tweet ID {id_status} didn't match regexp criteria")
+    time.sleep(8)
