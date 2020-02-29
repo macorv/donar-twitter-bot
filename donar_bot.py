@@ -2,8 +2,6 @@ import config
 import time
 from bot_tools import post_processing
 
-time.sleep(60 * 2)
-
 tw = config.create_api()
 
 mentions = tw.mentions_timeline()
@@ -53,3 +51,5 @@ for result in results:
     else:
         print(f"Tweet ID {id_status} didn't match regexp criteria")
     time.sleep(8)
+
+time.sleep(60 * 2)
