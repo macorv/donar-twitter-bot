@@ -1,7 +1,8 @@
 import config
 import time
+from bot_tools import post_processing
 
-time.sleep(60 * 5)
+time.sleep(60 * 3)
 
 tw = config.create_api()
 
@@ -25,3 +26,20 @@ for mention in mentions:
             print('Already RT')
             continue
         tw.retweet(mention._json['id'])
+
+time.sleep(60)
+
+# rt buscando keywords
+results = tw.search('dadores de sangre', result_type='mixed', count=40)
+
+for result in results:
+    match_status, id_status = post_processing(result)
+    if match_status:
+        search_status = tw.get_status(id_status)._json
+        if search_status['retweeted']:
+            pass
+        else:
+            tw.retweet(id_status)
+    else:
+        pass
+    time.sleep(8)
