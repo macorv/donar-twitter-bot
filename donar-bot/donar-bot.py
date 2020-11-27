@@ -1,9 +1,13 @@
 import configparser
 import time
 import botkit
+import os
+
+root_path = os.path.dirname(__file__)
+config_path = os.path.join(root_path, 'config.ini')
 
 config = configparser.ConfigParser()
-config.read('config.ini')
+config.read(config_path)
 
 print('---AUTHENTICATION---') # future logger
 try:
